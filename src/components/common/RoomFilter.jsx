@@ -26,6 +26,7 @@ const RoomFilter = ({ data, setFilteredData }) => {
             </span>
             <select
                 className="form-select"
+                aria-label="romm type filter"
                 value={filter}
                 onChange={handleSelectChange}
             >

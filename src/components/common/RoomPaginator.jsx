@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react"
 
-const RoomPaginator = ({ currentPage, totaPages, onPageChange }) => {
+const RoomPaginator = ({ currentPage, totalPages, onPageChange }) => {
     const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
     return (
-        <nav>
-            <ul className='pagination, justify-content-center'>
+        <nav aria-label="Page navigation">
+            <ul className="pagination justify-content-center">
                 {pageNumbers.map((pageNumber) => (
                     <li
                         key={pageNumber}
@@ -12,14 +12,9 @@ const RoomPaginator = ({ currentPage, totaPages, onPageChange }) => {
                         <button onClick={() => onPageChange(pageNumber)} className="page-link">
                             {pageNumber}
                         </button>
-
-
                     </li>
                 ))}
-
-
             </ul>
-
         </nav>
     )
 }
