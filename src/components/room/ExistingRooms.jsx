@@ -79,19 +79,32 @@ const ExistingRooms = () => {
 
     return (
         <>
+            <div className="container col-md-8 cok-lg-6">
+                {successMessage && <p className="alert alert-success mt-5" >{successMessage}</p>}
+                {errorMessage && <p className="alert alert-danger mt-5" >{errorMessage}</p>}
+            </div>
             {isLoading ? (
                 <p>Loading existing rooms</p>
             ) : (
                 <>
                     <section className="mt-5 mb-5 container">
-                        <div className='d-flex justify-content-center mb-3 mt-5'>
+                        <div className='d-flex justify-content-between mb-3 mt-5'>
                             <h2>Existing rooms</h2>
 
                         </div>
-                        <Col md={6} className='mb-2 mb-md-0'>
-                            <RoomFilter data={rooms} setFilteredData={setFilteredRooms} />
+                        <Row>
+                            <Col md={6} className='mb-2 mb-md-0'>
+                                <RoomFilter data={rooms} setFilteredData={setFilteredRooms} />
 
-                        </Col>
+                            </Col>
+
+                            <Col md={6} className='d-flex justify-content-end'>
+                                <Link to={"/add-rooms"}>
+                                    <FaPlus /> Add New Room
+
+                                </Link>
+                            </Col>
+                        </Row>
                         <table className="table table-bordered table-hover">
                             <thead>
                                 <tr className="text-center">
