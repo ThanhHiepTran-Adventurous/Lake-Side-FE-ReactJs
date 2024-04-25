@@ -261,7 +261,6 @@ const BookingForm = () => {
           </div>
         </div>
       </div>
-      ;
     </>
   );
 };
