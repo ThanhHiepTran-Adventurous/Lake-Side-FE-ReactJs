@@ -21,6 +21,7 @@ const Bookings = () => {
         });
     }, 1000);
   }, []);
+
   const handleBookingCancellation = async (bookingId) => {
     try {
       await cancelBooking(bookingId);

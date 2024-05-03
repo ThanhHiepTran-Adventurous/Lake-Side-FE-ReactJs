@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { registerUser } from "../utils/ApiFunctions";
+import { Link } from "react-router-dom";
 
 const Registration = () => {
   const [registration, setRegistration] = useState({
@@ -8,13 +9,15 @@ const Registration = () => {
     email: "",
     password: "",
   });
+
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+
   const handleInputChange = (e) => {
     setRegistration({ ...registration, [e.target.name]: e.target.value });
   };
 
-  const handleRegistration = async () => {
+  const handleRegistration = async (e) => {
     e.preventDefault();
     try {
       const result = await registerUser(registration);
@@ -30,6 +33,7 @@ const Registration = () => {
       setSuccessMessage("");
     }, 5000);
   };
+
   return (
     <section className="container col-6 mt-5 mb-5">
       {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
@@ -41,7 +45,7 @@ const Registration = () => {
       <form onSubmit={handleRegistration}>
         <div className="mb-3 row">
           <label htmlFor="firstName" className="col-sm-2 col-form-label">
-            first Name
+            First Name
           </label>
           <div className="col-sm-10">
             <input
