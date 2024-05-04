@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const api = axios.create({
-	baseURL: "https://lake-side-be-springboot-production.up.railway.app"
+	baseURL: "diplomatic-enjoyment-production.up.railway.app"
 })
 
 export const getHeader = () => {
